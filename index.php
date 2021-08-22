@@ -12,7 +12,7 @@ if(isset($_GET['page'])){
         include_once("pages/lessons.php");
     }elseif($_GET['page'] == 'noted'){
         include_once("pages/noted.php");
-    }elseif($_GET['page']=='admin' and $_GET['passowrd']='$$%%vuthySeCure'){
+    }elseif($_GET['page']=='admin' and $_GET['passowrd']='1234567'){
         include_once("pages/admin.php");
     }
     else{

@@ -8,7 +8,7 @@
         $userID = $_POST['userID'];
         $isUploaded = uploadImage($_POST);
         if($isUploaded){
-            header("Location:../../index.php?page=noted&lessonID=$lessonID&lessonName=$lessonName&userID=$userID&courseID=$courseID&courseName=$courseName&isSubmit=true");
+            header("Location:../../index.php?page=noted&lessonID=$lessonID&lessonName=$lessonName&userID=$userID&courseID=$courseID&courseName=$courseName&isSubmit=true&searchNoted");
         }else{
             header("Location:../../index.php?page=404");
         }

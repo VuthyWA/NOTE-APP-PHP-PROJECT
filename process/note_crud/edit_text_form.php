@@ -14,7 +14,7 @@
 ?>
 <div class="d-flex justify-content-center align-items-center w-100" style="height:80vh">
     <div id="noteInputText" class = "w-50" >
-        <a href="../../index.php?page=noted&lessonID=<?= $lessonID?>&lessonName=<?=$lessonName?>&userID=<?=$userID?>&courseID=<?=$courseID?>&courseName=<?=$courseName?>&isSubmit="><button class="btn btn-primary">Back</button></a>
+        <a href="../../index.php?page=noted&lessonID=<?= $lessonID?>&lessonName=<?=$lessonName?>&userID=<?=$userID?>&courseID=<?=$courseID?>&courseName=<?=$courseName?>&isSubmit=&searchNoted"><button class="btn btn-primary">Back</button></a>
         <form class="border border-primary rounded  mt-1 p-3" action="update_text_note.php" method="POST">
             <input type="hidden" name = "courseID" value = "<?=$courseID?>">
             <input type="hidden" name = "courseName" value= "<?=$courseName?>">

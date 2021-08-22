@@ -29,7 +29,7 @@
         </div>
     </nav>
     <div class="p-3 mx-auto col-xs-9 col-sm-9 col-md-8 col-lg-6 col-xl-5">
-        <a href="../../index.php?page=lessons&courseName=<?=$courseName?>&userID=<?=$userID?>&courseID=<?=$courseID?>"><button class="btn btn-danger mb-2"><i class="fa fa-angle-double-left"></i>Back</button></a>
+        <a href="../../index.php?page=lessons&courseName=<?=$courseName?>&userID=<?=$userID?>&courseID=<?=$courseID?>&searchLesson"><button class="btn btn-danger mb-2"><i class="fa fa-angle-double-left"></i>Back</button></a>
         <div>
             <form action="update_lesson.php" method="POST" class="border border-primary rounded p-3 mt-3 bg-white">
                 <input type="hidden" name = "userID" value = "<?= $userID;?>">

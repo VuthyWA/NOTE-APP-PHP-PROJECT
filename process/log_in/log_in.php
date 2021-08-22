@@ -9,7 +9,7 @@
     if($userID !=0){
       $userName = getUserName($userID);
       $_SESSION['userName'] = $userName;
-      header("Location:index.php?page=home&userID=$userID");
+      header("Location:index.php?page=home&userID=$userID&search=");
     }else{
       $messageWarning = "User doesn't exist; Please check your Email or password again";
     }

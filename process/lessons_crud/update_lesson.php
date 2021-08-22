@@ -6,7 +6,7 @@ $userID = $_POST['userID'];
 $isUpdated = updateALesson($_POST);
 
 if($isUpdated){
-    header("Location:../../index.php?page=lessons&courseName=$courseName&userID=$userID&courseID=$courseID");
+    header("Location:../../index.php?page=lessons&courseName=$courseName&userID=$userID&courseID=$courseID&searchLesson");
 }else{
     header("Location:../../index.php?page=404");
 }

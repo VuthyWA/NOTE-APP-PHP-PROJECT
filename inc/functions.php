@@ -13,6 +13,12 @@ function verifyUserLogin($data){
         }
     }return ($userID);
 }
+// search item 
+function getCourseData($data){
+    $search = $data['search'];
+    $userID = $data['userID'];
+    return database()->query("SELECT * FROM courses WHERE userID = '$userID' and title like '%$search%'");
+}
 // get userName 
 function getUserName($userID){
     $userName ="";
@@ -48,10 +54,6 @@ function SignUp($data){
 }
 
 //-------------------CRUD Courses-------------//
-// Get all course
-function getAllCourses($userID){
-    return database()->query("SELECT * FROM courses WHERE userID ='$userID'");
-}
 //Create new course 
 function createNewCourse($data){
     $title = $data["title"];
@@ -77,8 +79,10 @@ function updateCourse($data){
 //-------------------CRUD Courses-------------//
 //-------------------CRUD Lessons-------------//
 //Display all lessons
-function displayLessons($courseID){
-    return database()->query("SELECT * FROM lessons WHERE courseID ='$courseID' ");
+function getAllLessons($data){
+    $courseID = $data['courseID'];
+    $searchLesson = $data['searchLesson'];
+    return database()->query("SELECT * FROM lessons WHERE courseID ='$courseID' and title like '%$searchLesson%' ");
 }
 // create a new lesson 
 function createNewLesson($data){
@@ -104,8 +108,10 @@ function updateALesson($data){
 }
 //-------------------CRUD Lessons-------------//
 //-------------------CRUD what you noted-------//
-function displayAllNoted($lessonID){
-    return database()->query("SELECT * FROM note WHERE lessonID = '$lessonID'");
+function getAllNoted($data){
+    $searchNoted = $data['searchNoted'];
+    $lessonID = $data['lessonID'];
+    return database()->query("SELECT * FROM note WHERE lessonID = '$lessonID' and description like '%$searchNoted%'");
 }
 function addNewNoteText($data){
     $description = $data['description'];
@@ -143,3 +149,22 @@ function updateText($data){
     return database()->query("UPDATE note SET description ='$description' where itemID ='$itemID'");
 }
 //-------------------CRUD what you noted-------//
+//---------------admin CRUD------------------//
+function getAllUserData(){
+    return database()->query("SELECT * FROM user");
+}
+function searchUser($data){
+    $email = $data['search'];
+    return database()->query("SELECT * FROM user Where email like '%$email%'");
+}
+function deleteUserbyAdmin($userID){
+    return database()->query("DELETE from user where userID ='$userID'");
+}
+function GetUserByAdmin($userID){
+    return database()->query("SELECT * from user where userID ='$userID'");
+}
+function DisableUserByAdmin($data){
+    $email = $data["email"];
+    $userID = $data["userID"];
+    return database()->query("UPDATE user set email = '$email' ");
+}

@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
     $itemID = $_GET["itemID"];
     $isDelete = deleteImage($itemID);
     if($isDelete){
-        header("Location:../../index.php?page=noted&lessonID=$lessonID&lessonName=$lessonName&userID=$userID&courseID=$courseID&courseName=$courseName&isSubmit=");
+        header("Location:../../index.php?page=noted&lessonID=$lessonID&lessonName=$lessonName&userID=$userID&courseID=$courseID&courseName=$courseName&isSubmit&searchNoted");
     }else{
         header("Location:../../index.php?page=404");
     }
